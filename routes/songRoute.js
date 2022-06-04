@@ -11,7 +11,7 @@ const router = express.Router();
 
 const storage = multer.diskStorage({
   destination: (req, file, cb) => {
-    cb(null, "uploads");
+    cb(null, "/uploads");
   },
   filename: (req, file, cb) => {
     let filePath = [];
@@ -52,7 +52,6 @@ router.post(
   "/add-songs",
   upload.single("artwork"),
   asyncHandler(async (req, res) => {
-    //console.log("Files", fileInArray)
     const { songname, date, artist } = req.body;
 
     if (!songname || !date || !artist) {

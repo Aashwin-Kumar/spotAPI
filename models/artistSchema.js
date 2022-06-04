@@ -19,13 +19,13 @@ const artistSchema = new mongoose.Schema({
 
 })
 
-artistSchema.virtual('id').get(function () {
-    return this._id.toHexString();
-});
+// artistSchema.virtual('id').get(function () {
+//     return this._id.toHexString();
+// });
 
-artistSchema.set('toJSON', {
-    virtuals: true
-});
+// artistSchema.set('toJSON', {
+//     virtuals: true
+// });
 
 
 const Artist = mongoose.model("Artist", artistSchema);
